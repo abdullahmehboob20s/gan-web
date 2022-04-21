@@ -11,7 +11,9 @@ export default function Home() {
         <Hero />
       </Container>
 
-      <Stats />
+      <div id="map">
+        <Stats />
+      </div>
 
       <Roadmap />
 

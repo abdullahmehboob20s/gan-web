@@ -3,6 +3,7 @@ import Button from "components/Button";
 import styled from "styled-components";
 import useMediaQuery from "hooks/useMediaQuery";
 import ProgressBarComponent from "components/ProgressBarComponent";
+import { useRouter } from "next/router";
 
 const Section = styled.div`
   display: flex;
@@ -35,8 +36,19 @@ const Section = styled.div`
   }
 `;
 
+const SectionRight = styled.div`
+  @media (max-width: 1000px) {
+    display: none;
+  }
+`;
+
 function Hero() {
   const isBellow1000px = useMediaQuery("(max-width : 1000px)");
+  const router = useRouter();
+
+  const navigating = () => {
+    router.push("#map");
+  };
 
   return (
     <Section>
@@ -55,7 +67,7 @@ function Hero() {
 
         {isBellow1000px ? (
           <div className="mb-30px">
-            <Button title="Explore your city" />
+            <Button title="Explore your city" onClick={navigating} />
           </div>
         ) : (
           ""
@@ -69,15 +81,19 @@ function Hero() {
           Ganbatte delivers data-driven insights, tools and actionable case
           studies from around the world and makes them easily accessible.
         </p>
-        {isBellow1000px ? "" : <Button title="Explore your city" />}
+        {isBellow1000px ? (
+          ""
+        ) : (
+          <Button title="Explore your city" onClick={navigating} />
+        )}
       </div>
 
       {isBellow1000px ? (
         ""
       ) : (
-        <div>
+        <SectionRight>
           <ProgressBarComponent />
-        </div>
+        </SectionRight>
       )}
     </Section>
   );

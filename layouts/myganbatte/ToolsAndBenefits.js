@@ -61,6 +61,7 @@ function ToolsAndBenefits() {
 
         <Cards>
           <ToolsAndBenefitsCard
+            id="dashboard"
             link="https://docs.google.com/forms/d/e/1FAIpQLSf26lSZdTm4t2a1KYaudM2bBLn3mngD5OQUPf5HHKEwjdHWTQ/viewform"
             title="MyGanbatte Dashboard"
             subtitle="Turn your actions into valuable and comparable data "
@@ -68,6 +69,7 @@ function ToolsAndBenefits() {
             img="/toolImg1.png"
           />
           <ToolsAndBenefitsCard
+            id="circularity"
             link="https://circularity.games/"
             title="Circularity Academy"
             subtitle="Delivering skills for the circular economy "
@@ -75,6 +77,7 @@ function ToolsAndBenefits() {
             img="/toolImg2.png"
           />
           <ToolsAndBenefitsCard
+            id="tool"
             link="https://cat.ganbatte.world/"
             title="Circularity Assessment Tool"
             subtitle="Create a baseline, learn together and see progress on becoming circular "
@@ -82,6 +85,7 @@ function ToolsAndBenefits() {
             img="/toolImg3.png"
           />
           <ToolsAndBenefitsCard
+            id="hub"
             link="https://knowledge-hub.circle-lab.com/"
             title="Knowledge Hub Collection"
             subtitle="Your curated collection of circular economy case studies"

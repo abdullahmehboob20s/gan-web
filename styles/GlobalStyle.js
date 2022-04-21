@@ -18,7 +18,6 @@ body {
 
 .font-noto-sans{
   font-family: 'Noto Sans', sans-serif;
-
 }
 
 :root {

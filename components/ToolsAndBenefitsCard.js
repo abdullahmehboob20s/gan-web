@@ -41,9 +41,9 @@ const ImageBox = styled.div`
   }
 `;
 
-function ToolsAndBenefitsCard({ title, subtitle, desc, link, img }) {
+function ToolsAndBenefitsCard({ title, subtitle, desc, link, img, id }) {
   return (
-    <Card>
+    <Card id={id}>
       <ImageBox className="relative">
         <Image src={img} alt="" layout="fill" objectFit="cover" />
       </ImageBox>

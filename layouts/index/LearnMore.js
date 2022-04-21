@@ -71,6 +71,10 @@ const TextLink = styled.a`
 function LearnMore() {
   const router = useRouter();
 
+  const navigating = (link) => {
+    router.push(link);
+  };
+
   return (
     <div>
       <div className="bg-dark-purple">
@@ -108,16 +112,19 @@ function LearnMore() {
               img="/toolImg1.png"
               title="MyGanbatte Dashboard"
               subtitle="Turn your actions into valuable and comparable data "
+              onClick={() => navigating("/myganbatte/#dashboard")}
             />
             <ToolsCard
               img="/toolImg2.png"
               title="Circularity Academy"
               subtitle="Delivering skills for the circular economy "
+              onClick={() => navigating("/myganbatte/#circularity")}
             />
             <ToolsCard
               img="/toolImg3.png"
               title="Circularity Assessment Tool"
               subtitle="Create a baseline, learn together and progress on becoming circular "
+              onClick={() => navigating("/myganbatte/#tool")}
             />
           </Cards>
 

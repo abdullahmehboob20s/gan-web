@@ -43,7 +43,15 @@ function Footer() {
             </p>
           </div>
 
-          <Button title="Register" icon={<FiArrowUpRight size={22} />} />
+          <Button
+            title="Register"
+            icon={<FiArrowUpRight size={22} />}
+            onClick={() =>
+              window.open(
+                "https://docs.google.com/forms/d/e/1FAIpQLSf26lSZdTm4t2a1KYaudM2bBLn3mngD5OQUPf5HHKEwjdHWTQ/viewform"
+              )
+            }
+          />
         </Section>
       </Container>
     </div>

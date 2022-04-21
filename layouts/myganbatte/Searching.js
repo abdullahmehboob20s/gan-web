@@ -76,7 +76,11 @@ function Searching() {
           <p className="fs-16px black opacity-0_8 weight-6 lh-1_7 mb-15px">
             Get in contact with us to become a Ganbatte Innovator
           </p>
-          <Button title="Contact us" />
+
+          <Button
+            title="Contact us"
+            onClick={() => window.open("ganbatte@circle-economy.com")}
+          />
         </ContactUs>
       </Section>
     </Wrapper>

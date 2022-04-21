@@ -16,9 +16,9 @@ const Content = styled.div`
   padding: 18px;
 `;
 
-function ToolsCard({ img, title, subtitle }) {
+function ToolsCard({ img, title, subtitle, onClick }) {
   return (
-    <Card className="pointer">
+    <Card className="pointer" onClick={onClick}>
       {img && (
         <ImageDiv className="relative mb-10px">
           <Image src={img} alt="" layout="fill" />
