@@ -7,6 +7,27 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+const SectionWrapper = styled.div`
+  position: relative;
+  background-color: #5c0c40;
+  z-index: 10;
+  margin-bottom: 48px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: calc(100%);
+    left: 0;
+    width: 100%;
+    height: 48px;
+    background: url(./bottomCurve.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 12;
+    background-position: center center;
+  }
+`;
+
 const Section = styled(Container)`
   display: flex;
   align-items: center;
@@ -76,8 +97,8 @@ function LearnMore() {
   };
 
   return (
-    <div>
-      <div className="bg-dark-purple">
+    <div className="bg-purple">
+      <SectionWrapper>
         <Section className="py-100px ">
           <div>
             <p className="fs-28px weight-4 mb-5px white">MyGanbatte</p>
@@ -102,38 +123,36 @@ function LearnMore() {
             />
           </div>
         </Section>
-      </div>
-      <div className="bg-purple">
-        <Container className="py-100px ">
-          <h1 className="fs-20px white weight-6 white mb-30px ">Tools</h1>
+      </SectionWrapper>
+      <Container className="py-100px">
+        <h1 className="fs-20px white weight-6 white mb-30px ">Tools</h1>
 
-          <Cards className="mb-35px">
-            <ToolsCard
-              img="/toolImg1.png"
-              title="MyGanbatte Dashboard"
-              subtitle="Turn your actions into valuable and comparable data "
-              onClick={() => navigating("/myganbatte/#dashboard")}
-            />
-            <ToolsCard
-              img="/toolImg2.png"
-              title="Circularity Academy"
-              subtitle="Delivering skills for the circular economy "
-              onClick={() => navigating("/myganbatte/#circularity")}
-            />
-            <ToolsCard
-              img="/toolImg3.png"
-              title="Circularity Assessment Tool"
-              subtitle="Create a baseline, learn together and progress on becoming circular "
-              onClick={() => navigating("/myganbatte/#tool")}
-            />
-          </Cards>
+        <Cards className="mb-35px">
+          <ToolsCard
+            img="/toolImg1.png"
+            title="MyGanbatte Dashboard"
+            subtitle="Turn your actions into valuable and comparable data "
+            onClick={() => navigating("/myganbatte/#dashboard")}
+          />
+          <ToolsCard
+            img="/toolImg2.png"
+            title="Circularity Academy"
+            subtitle="Delivering skills for the circular economy "
+            onClick={() => navigating("/myganbatte/#circularity")}
+          />
+          <ToolsCard
+            img="/toolImg3.png"
+            title="Circularity Assessment Tool"
+            subtitle="Create a baseline, learn together and progress on becoming circular "
+            onClick={() => navigating("/myganbatte/#tool")}
+          />
+        </Cards>
 
-          <TextLink className="pointer hover-underline white">
-            <p className="fs-16px white weight-7">Learn more about our tools</p>
-            <Image src="/rightArrow.svg" alt="" width="24px" height="24px" />
-          </TextLink>
-        </Container>
-      </div>
+        <TextLink className="pointer hover-underline white">
+          <p className="fs-16px white weight-7">Learn more about our tools</p>
+          <Image src="/rightArrow.svg" alt="" width="24px" height="24px" />
+        </TextLink>
+      </Container>
     </div>
   );
 }
