@@ -2,6 +2,7 @@ import { Container } from "styles/GlobalStyle";
 import Button from "components/Button";
 import styled from "styled-components";
 import useMediaQuery from "hooks/useMediaQuery";
+import ProgressBarComponent from "components/ProgressBarComponent";
 
 const Section = styled.div`
   display: flex;
@@ -34,44 +35,15 @@ const Section = styled.div`
   }
 `;
 
-const ProgressBar = styled.div`
-  width: 302.54px;
-  height: 302.54px;
-  border: 16.0924px solid #564f4e;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 0 2rem;
-  box-shadow: 0px 13.5575px 36.1534px -5.64897px rgba(2, 24, 110, 0.15);
-
-  @media (max-width: 1000px) {
-    margin: 0 auto;
-    margin-bottom: 40px;
-  }
-`;
-
 function Hero() {
   const isBellow1000px = useMediaQuery("(max-width : 1000px)");
+
   return (
     <Section>
       <div>
         <h1 className="fs-48px black opacity-0_8 weight-7 mb-45px">Ganbatte</h1>
 
-        {isBellow1000px ? (
-          <ProgressBar>
-            <p className="uppercase text-center fs-18px black opacity-0_8 weight-6 lh-1_6">
-              GLOBAL <br /> CIRCULARITY METRIC
-            </p>
-            <p className="text-center fs-78px black opacity-0_8 weight-5 mb-5px">
-              8.6%
-            </p>
-            <p className="fs-16px text-center weight-5 uppercase">GOAL: 17%</p>
-          </ProgressBar>
-        ) : (
-          ""
-        )}
+        {isBellow1000px ? <ProgressBarComponent /> : ""}
 
         <p className="fs-28px black weight-4 mb-15px">
           The world is <span className="weight-6">only 8.6% circular.</span>
@@ -104,15 +76,7 @@ function Hero() {
         ""
       ) : (
         <div>
-          <ProgressBar>
-            <p className="uppercase text-center fs-18px black opacity-0_8 weight-6 lh-1_6">
-              GLOBAL <br /> CIRCULARITY METRIC
-            </p>
-            <p className="text-center fs-78px black opacity-0_8 weight-5 mb-5px">
-              8.6%
-            </p>
-            <p className="fs-16px text-center weight-5 uppercase">GOAL: 17%</p>
-          </ProgressBar>
+          <ProgressBarComponent />
         </div>
       )}
     </Section>
