@@ -862,7 +862,7 @@ li {
 
 const Container = styled.div`
   width: 90%;
-  max-width: 1500px;
+  max-width: 1032px;
   margin: 0 auto;
 `;
 
